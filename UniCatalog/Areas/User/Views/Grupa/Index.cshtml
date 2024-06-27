@@ -1,0 +1,47 @@
+﻿@page
+<Nullable>enable</Nullable>
+@model IEnumerable<UniCatalog.Models.Grupa>?
+
+@{
+    
+    Layout = "_Layout";
+}
+
+<h1>Grupa List</h1>
+
+<div class="container">
+    @if (Model is null)
+    {
+       <p>Nu exista grupe</p>
+    }
+    else
+    {
+        foreach (var grupa in Model)
+        {
+            if (grupa != null)
+            {
+                <div class="card shadow mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">@grupa.Name</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Render other properties of 'grupa' -->
+                        @if (grupa.Student != null && grupa.Student.Any())
+                        {
+                            <ul class="list-group">
+                                @foreach (var student in grupa.Student)
+                                {
+                                    <li class="list-group-item">@student.Name @student.Prenume</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No students found for this group.</p>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>

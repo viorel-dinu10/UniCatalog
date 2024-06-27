@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UniCatalog.Models.Student>
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="container">
+    <h2 class="mt-4 mb-3">Student List</h2>
+
+    <div class="row">
+        @foreach (var student in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@student.Name</h5>
+                        <p class="card-text">@student.Prenume</p>
+                        <p class="card-text">CNP: @student.CNP</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
