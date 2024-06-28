@@ -25,7 +25,7 @@ public class Student
     public double MedieAdmitere { get; set; }
 
     [ForeignKey("Plan")]
-    public int? PlanId { get; set; }
+    public int PlanId { get; set; }
     public string? GrupaName { get; set; }
     public Grupa? Grupa { get; set; }
 

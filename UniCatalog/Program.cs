@@ -29,10 +29,11 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-//builder.Services.AddScoped<GroupService>();
+
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 //builder.Services.AddScoped<IGrupaRepository, GrupaRepository>();
-
+builder.Services.AddScoped<IPlanDeInvatamantRepository, PlanDeInvatamantRepository>();
+builder.Services.AddScoped<GroupService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

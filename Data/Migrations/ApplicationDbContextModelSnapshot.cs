@@ -220,6 +220,100 @@ namespace UniCatalog.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("UniCatalog.Models.CadruDidactic", b =>
+                {
+                    b.Property<string>("MarcaAngajat")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DisciplinaId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nume")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Post")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Prenume")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titlu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MarcaAngajat");
+
+                    b.ToTable("CadreDidactice");
+
+                    b.HasData(
+                        new
+                        {
+                            MarcaAngajat = "13ef1",
+                            DisciplinaId = "15ab1",
+                            Nume = "Popescu",
+                            Post = 0,
+                            Prenume = "Ion",
+                            Titlu = "Dr."
+                        },
+                        new
+                        {
+                            MarcaAngajat = "13ef2",
+                            DisciplinaId = "15ab2",
+                            Nume = "Georgescu",
+                            Post = 3,
+                            Prenume = "Marius",
+                            Titlu = "Dr. Ing."
+                        },
+                        new
+                        {
+                            MarcaAngajat = "13ef3",
+                            DisciplinaId = "15ab3",
+                            Nume = "Ion",
+                            Post = 3,
+                            Prenume = "Elena",
+                            Titlu = "Dr."
+                        },
+                        new
+                        {
+                            MarcaAngajat = "13ef4",
+                            DisciplinaId = "15ab4",
+                            Nume = "Radu",
+                            Post = 0,
+                            Prenume = "Constantin",
+                            Titlu = "Dr."
+                        },
+                        new
+                        {
+                            MarcaAngajat = "13ef5",
+                            DisciplinaId = "15ab5",
+                            Nume = "Pop",
+                            Post = 4,
+                            Prenume = "Carmen",
+                            Titlu = "Dr.Ing."
+                        },
+                        new
+                        {
+                            MarcaAngajat = "13ef6",
+                            DisciplinaId = "15ab6",
+                            Nume = "Dan",
+                            Post = 2,
+                            Prenume = "Alexandra",
+                            Titlu = "Dr."
+                        },
+                        new
+                        {
+                            MarcaAngajat = "13ef7",
+                            DisciplinaId = "15ab7",
+                            Nume = "Ionescu",
+                            Post = 3,
+                            Prenume = "Maria",
+                            Titlu = "Dr."
+                        });
+                });
+
             modelBuilder.Entity("UniCatalog.Models.Disciplina", b =>
                 {
                     b.Property<string>("Cod")
@@ -326,6 +420,10 @@ namespace UniCatalog.Data.Migrations
                     b.Property<int>("CicluDeInvatamant")
                         .HasColumnType("int");
 
+                    b.Property<string>("Cod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -340,6 +438,7 @@ namespace UniCatalog.Data.Migrations
                             Id = 1,
                             An = 1,
                             CicluDeInvatamant = 0,
+                            Cod = "2",
                             Name = "AIA"
                         },
                         new
@@ -347,6 +446,7 @@ namespace UniCatalog.Data.Migrations
                             Id = 2,
                             An = 2,
                             CicluDeInvatamant = 1,
+                            Cod = "3",
                             Name = "AIA"
                         });
                 });
@@ -377,7 +477,7 @@ namespace UniCatalog.Data.Migrations
                     b.Property<int?>("PlanDeInvatamantId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PlanId")
+                    b.Property<int>("PlanId")
                         .HasColumnType("int");
 
                     b.Property<string>("Prenume")
@@ -397,7 +497,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10917/4lf422019",
                             CNP = "5030610211245",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9105),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3331),
                             MedieAdmitere = 7.5,
                             Name = "Snow",
                             PlanId = 1,
@@ -407,7 +507,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10918/4lf422019",
                             CNP = "5040710211234",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9170),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3389),
                             MedieAdmitere = 8.0999999999999996,
                             Name = "Stark",
                             PlanId = 1,
@@ -417,7 +517,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10919/4lf422019",
                             CNP = "5030810211256",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9173),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3392),
                             MedieAdmitere = 8.6999999999999993,
                             Name = "Lannister",
                             PlanId = 1,
@@ -427,7 +527,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10920/4lf422019",
                             CNP = "5030910211267",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9176),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3394),
                             MedieAdmitere = 9.0,
                             Name = "Targaryen",
                             PlanId = 2,
@@ -437,7 +537,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10921/4lf422019",
                             CNP = "5031010211278",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9179),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3396),
                             MedieAdmitere = 7.7999999999999998,
                             Name = "Baratheon",
                             PlanId = 2,
@@ -447,7 +547,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10922/4lf422019",
                             CNP = "5031110211289",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9182),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3398),
                             MedieAdmitere = 7.2999999999999998,
                             Name = "Greyjoy",
                             PlanId = 1,
@@ -457,7 +557,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10923/4lf422019",
                             CNP = "5031210211290",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9185),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3400),
                             MedieAdmitere = 8.5,
                             Name = "Mormont",
                             PlanId = 2,
@@ -467,7 +567,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10924/4lf422019",
                             CNP = "5031310211301",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9187),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3402),
                             MedieAdmitere = 8.9000000000000004,
                             Name = "Tyrell",
                             PlanId = 2,
@@ -477,7 +577,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10925/4lf422019",
                             CNP = "5031410211312",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9190),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3404),
                             MedieAdmitere = 8.1999999999999993,
                             Name = "Sand",
                             PlanId = 1,
@@ -487,7 +587,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10926/4lf422019",
                             CNP = "5031510211323",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9193),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3407),
                             MedieAdmitere = 8.3000000000000007,
                             Name = "Martell",
                             PlanId = 2,
@@ -497,7 +597,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10927/4lf422019",
                             CNP = "5031610211334",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9196),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3409),
                             MedieAdmitere = 7.9000000000000004,
                             Name = "Tarly",
                             PlanId = 1,
@@ -507,7 +607,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10928/4lf422019",
                             CNP = "5031710211345",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9198),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3410),
                             MedieAdmitere = 7.2000000000000002,
                             Name = "Bolton",
                             PlanId = 2,
@@ -517,7 +617,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10929/4lf422019",
                             CNP = "5031810211356",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9201),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3413),
                             MedieAdmitere = 8.4000000000000004,
                             Name = "Baelish",
                             PlanId = 1,
@@ -527,7 +627,7 @@ namespace UniCatalog.Data.Migrations
                         {
                             NrMatricol = "10930/4lf422019",
                             CNP = "5031910211367",
-                            DataInscrierii = new DateTime(2024, 6, 27, 14, 38, 40, 69, DateTimeKind.Local).AddTicks(9204),
+                            DataInscrierii = new DateTime(2024, 6, 28, 4, 9, 24, 817, DateTimeKind.Local).AddTicks(3415),
                             MedieAdmitere = 8.0,
                             Name = "Clegane",
                             PlanId = 2,

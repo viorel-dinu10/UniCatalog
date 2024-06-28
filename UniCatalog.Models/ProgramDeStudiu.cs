@@ -10,7 +10,6 @@ namespace UniCatalog.Models
     public class ProgramDeStudiu {
         public CicluDeInvatamant CicluDeInvatamant { get; set; }
         public string Name { get; set; }
-        [Key]
-        public char Cod;
+       
     }
 }

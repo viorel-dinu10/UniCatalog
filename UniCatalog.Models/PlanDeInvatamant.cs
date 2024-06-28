@@ -11,7 +11,7 @@ namespace UniCatalog.Models
     {
         [Key]
         public int Id { get; set; }
-
+        public char Cod { get; set; }
         private List<Disciplina> Discipline { get; set; }
     }
     

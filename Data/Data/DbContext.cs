@@ -15,14 +15,14 @@ namespace UniCatalog.Data.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<CadruDidactic>.HasData(
+            modelBuilder.Entity<CadruDidactic>().HasData(
                 new CadruDidactic{MarcaAngajat = "13ef1",DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr."},
-                new CadruDidactic { MarcaAngajat = "13ef2", DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr." },
-                new CadruDidactic { MarcaAngajat = "13ef3", DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr." },
-                new CadruDidactic { MarcaAngajat = "13ef4", DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr." },
-                new CadruDidactic { MarcaAngajat = "13ef5", DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr." },
-                new CadruDidactic { MarcaAngajat = "13ef6", DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr." },
-                new CadruDidactic { MarcaAngajat = "13ef7", DisciplinaId = "15ab1", Nume = "Popescu", Prenume = "Ion", Post = Post.Asistent, Titlu = "Dr." },
+                new CadruDidactic { MarcaAngajat = "13ef2", DisciplinaId = "15ab2", Nume = "Georgescu", Prenume = "Marius", Post = Post.Profesor, Titlu = "Dr. Ing." },
+                new CadruDidactic { MarcaAngajat = "13ef3", DisciplinaId = "15ab3", Nume = "Ion", Prenume = "Elena", Post = Post.Profesor, Titlu = "Dr." },
+                new CadruDidactic { MarcaAngajat = "13ef4", DisciplinaId = "15ab4", Nume = "Radu", Prenume = "Constantin", Post = Post.Asistent, Titlu = "Dr." },
+                new CadruDidactic { MarcaAngajat = "13ef5", DisciplinaId = "15ab5", Nume = "Pop", Prenume = "Carmen", Post = Post.CDA, Titlu = "Dr.Ing." },
+                new CadruDidactic { MarcaAngajat = "13ef6", DisciplinaId = "15ab6", Nume = "Dan", Prenume = "Alexandra", Post = Post.Conferentiar, Titlu = "Dr." },
+                new CadruDidactic { MarcaAngajat = "13ef7", DisciplinaId = "15ab7", Nume = "Ionescu", Prenume = "Maria", Post = Post.Profesor, Titlu = "Dr." }
                 );
 
             modelBuilder.Entity<Disciplina>().HasData(
@@ -36,7 +36,7 @@ namespace UniCatalog.Data.Data
                 );
 
             modelBuilder.Entity<PlanDeInvatamant>().HasData(
-                new PlanDeInvatamant{Id = 1,An = 1, CicluDeInvatamant = CicluDeInvatamant.Licenta,Cod = '3',Name = "AIA", },
+                new PlanDeInvatamant{Id = 1,An = 1, CicluDeInvatamant = CicluDeInvatamant.Licenta,Cod = '2',Name = "AIA", },
                 new PlanDeInvatamant {Id = 2,  An = 2, CicluDeInvatamant = CicluDeInvatamant.Master, Cod = '3', Name = "AIA" }
                 );
 

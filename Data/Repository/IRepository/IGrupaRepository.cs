@@ -9,11 +9,6 @@ namespace UniCatalog.Data.Repository.IRepository
 {
     public interface IGrupaRepository
     {
-        //IEnumerable<Grupa> GetAllGroups();
-        Grupa GetGrupaById(string numarMatricol);
-        void AddGrupa(Grupa student);
-        void UpdateGrupa(Grupa student);
-        void DeleteGrupa(string numarMatricol);
-        void Save();
+       
     }
 }
